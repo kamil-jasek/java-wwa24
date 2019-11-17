@@ -46,7 +46,7 @@ public class PersonTablePrinter {
 
     private void buildRows(List<Person> people, StringBuilder builder) {
         for (Person person : people) {
-            builder.append(field(person.getFullName(), columnsWidth[0])).append("|")
+            builder.append(field(person.getName(), columnsWidth[0])).append("|")
                     .append(field(buildPhoneNumber(person), columnsWidth[1])).append("|")
                     .append(field(String.valueOf(person.isActive()), columnsWidth[2])).append("|")
                     .append('\n');

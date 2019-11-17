@@ -36,7 +36,7 @@ class PersonTest {
 
     void testPersonFullName() {
         Person person1 = new Person("Kamil", "Jasek");
-        assert person1.getFullName().equals("Kamil Jasek") : "Not Kamil Jasek";
+        assert person1.getName().equals("Kamil Jasek") : "Not Kamil Jasek";
     }
 
     void testPersonEqualsHashcodeContract() {
