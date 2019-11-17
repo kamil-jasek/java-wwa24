@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PersonTest {
+class PersonTest {
 
-    public void testCreatePerson() {
+    void testCreatePerson() {
         Person person1 = new Person("Kamil", "Jasek");
         assert person1 != null : "Person1 is null!";
 
@@ -16,11 +16,7 @@ public class PersonTest {
         assert person2 != null : "Person2 is null!";
     }
 
-    public void toStringUtil() {
-
-    }
-
-    public void testPersonPhoneNumbers() {
+    void testPersonPhoneNumbers() {
         Person person1 = new Person("Kamil", "Jasek");
         person1.addPhoneNumber("+4894920230939");
         person1.addPhoneNumber("+4492029493922");
@@ -32,18 +28,18 @@ public class PersonTest {
         assert person1.removePhoneNumber(10) == null : "Phone number exists";
     }
 
-    public void testPersonActive() {
+    void testPersonActive() {
         Person person1 = new Person("Kamil", "Jasek");
         person1.toggleActive();
         assert !person1.isActive() : "Person1 is active";
     }
 
-    public void testPersonFullName() {
+    void testPersonFullName() {
         Person person1 = new Person("Kamil", "Jasek");
         assert person1.getFullName().equals("Kamil Jasek") : "Not Kamil Jasek";
     }
 
-    public void testPersonEqualsHashcodeContract() {
+    void testPersonEqualsHashcodeContract() {
         Person person1 = new Person("Kamil", "Jasek");
         Person person2 = new Person("Jan", "Kowalski", false);
         Person person3 = new Person("Jan", "Nowak");

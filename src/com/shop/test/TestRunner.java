@@ -2,19 +2,19 @@ package com.shop.test;
 
 import java.lang.reflect.Method;
 
-public class TestRunner {
+class TestRunner {
 
     private final Object[] tests;
 
-    public TestRunner(Object ...tests) {
+    TestRunner(Object ...tests) {
         this.tests = tests;
     }
 
-    public void runTests() {
+    void runTests() {
         runTests("test.+");
     }
 
-    public void runTests(String pattern) {
+    void runTests(String pattern) {
         for (Object test : tests) {
             Method[] declaredMethods = test.getClass().getDeclaredMethods();
             System.out.println("Test Class: " + test.getClass().getName());
