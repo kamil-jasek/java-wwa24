@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-17
  */
-class PersonTablePrinterTest {
+final class PersonTablePrinterTest {
 
     void testCreatePersonTablePrinter() {
         PersonTablePrinter printer = new PersonTablePrinter(new int[] {10, 16, 8});

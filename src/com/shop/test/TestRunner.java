@@ -2,7 +2,7 @@ package com.shop.test;
 
 import java.lang.reflect.Method;
 
-class TestRunner {
+final class TestRunner {
 
     private final Object[] tests;
 
@@ -14,7 +14,7 @@ class TestRunner {
         runTests("test.+");
     }
 
-    void runTests(String pattern) {
+    final void runTests(String pattern) {
         for (Object test : tests) {
             Method[] declaredMethods = test.getClass().getDeclaredMethods();
             System.out.println("Test Class: " + test.getClass().getName());

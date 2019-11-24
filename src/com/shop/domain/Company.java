@@ -8,23 +8,24 @@ import java.util.Objects;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-17
  */
-public class Company extends Customer {
+public final class Company extends Customer {
 
-    private final String vatNumber;
+    private final VatNumber vatNumber;
 
-    public Company(String name, String vatNumber) {
+    public Company(String name, VatNumber vatNumber) {
         super(name);
         Objects.requireNonNull(vatNumber);
         this.vatNumber = vatNumber;
     }
 
-    public Company(String name, String vatNumber, boolean active) {
+    public Company(String name, VatNumber vatNumber, boolean active) {
         super(name, active);
         Objects.requireNonNull(vatNumber);
         this.vatNumber = vatNumber;
     }
 
-    public String getVatNumber() {
-        return vatNumber;
+    @Override
+    public String getTaxId() {
+        return vatNumber.getValue();
     }
 }

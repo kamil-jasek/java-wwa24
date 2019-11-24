@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-class PersonTest {
+final class PersonTest {
 
     void testCreatePerson() {
         Person person1 = new Person("Kamil", "Jasek");

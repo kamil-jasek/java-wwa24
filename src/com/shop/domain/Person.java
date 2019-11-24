@@ -2,7 +2,7 @@ package com.shop.domain;
 
 import java.util.Objects;
 
-public class Person extends Customer {
+public final class Person extends Customer {
 
     private String firstName;
     private String lastName;
@@ -23,6 +23,11 @@ public class Person extends Customer {
         Objects.requireNonNull(lastName);
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    @Override
+    public String getTaxId() {
+        return null;
     }
 
     public String getFirstName() {

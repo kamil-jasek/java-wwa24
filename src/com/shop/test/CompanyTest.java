@@ -1,6 +1,7 @@
 package com.shop.test;
 
 import com.shop.domain.Company;
+import com.shop.domain.VatNumber;
 
 /**
  * ... comment class...
@@ -8,10 +9,10 @@ import com.shop.domain.Company;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-17
  */
-class CompanyTest {
+final class CompanyTest {
 
     void testCreateCompany() {
-        Company company = new Company("Samsung", "PL293993030");
+        Company company = new Company("Samsung", new VatNumber("PL0399300392"));
         assert company != null : "Company not created";
     }
 }

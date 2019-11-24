@@ -10,16 +10,18 @@ import java.util.Objects;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-17
  */
-public class Customer {
+public abstract class Customer {
 
     private final String name;
-    private List<String> phoneNumbers;
+    private final List<String> phoneNumbers;
+    private final List<Address> addresses;
     private boolean active;
 
     public Customer(String name) {
         Objects.requireNonNull(name);
         this.name = name;
         this.phoneNumbers = new ArrayList<>();
+        this.addresses = new ArrayList<>();
         this.active = true;
     }
 
@@ -28,12 +30,18 @@ public class Customer {
         this.active = active;
     }
 
+    public abstract String getTaxId();
+
     public String getName() {
         return name;
     }
 
     public List<String> getPhoneNumbers() {
         return new ArrayList<>(phoneNumbers);
+    }
+
+    public List<Address> getAddresses() {
+        return new ArrayList<>(addresses);
     }
 
     public boolean isActive() {
@@ -69,5 +77,11 @@ public class Customer {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    public void addAddress(Address address) {
+        if (address != null && !addresses.contains(address)) {
+            addresses.add(address);
+        }
     }
 }
