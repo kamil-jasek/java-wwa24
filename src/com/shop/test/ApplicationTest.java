@@ -8,7 +8,8 @@ final class ApplicationTest {
                 new PersonTest(),
                 new PersonTablePrinterTest(),
                 new CustomerTest(),
-                new DiscountPolicyTest());
+                new DiscountPolicyTest(),
+                new OrderTest());
         runner.runTests();
     }
 }
