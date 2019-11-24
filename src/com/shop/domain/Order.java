@@ -17,20 +17,33 @@ public final class Order {
     private final DiscountPolicy discountPolicy;
     private final List<Item> items;
     private float discount;
+    private OrderStatus status;
 
     public Order(DiscountPolicy discountPolicy) {
         Objects.requireNonNull(discountPolicy);
         this.discountPolicy = discountPolicy;
         this.items = new ArrayList<>();
+        this.status = OrderStatus.IN_PROGRESS;
     }
 
     public List<Item> getItems() {
         return new ArrayList<>(items);
     }
 
+    public OrderStatus getStatus() {
+        return status;
+    }
+
     public void addItem(Item item) {
-        if (item != null && !items.contains(item)) {
+        if (item != null && !items.contains(item) &&
+                status.equals(OrderStatus.IN_PROGRESS)) {
             items.add(item);
+        }
+    }
+
+    public void send() {
+        if (items.size() > 0) {
+            status = OrderStatus.SENT;
         }
     }
 

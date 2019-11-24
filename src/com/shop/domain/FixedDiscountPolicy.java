@@ -1,5 +1,9 @@
 package com.shop.domain;
 
+import com.shop.util.Precondition;
+
+import static com.shop.util.Precondition.checkArgument;
+
 /**
  * Fixed discount policy.
  *
@@ -11,9 +15,7 @@ public final class FixedDiscountPolicy implements DiscountPolicy {
     private final float discount;
 
     public FixedDiscountPolicy(float discount) {
-        if (discount < 0 || discount > 1) {
-            throw new IllegalArgumentException("Invalid discount: " + discount);
-        }
+        checkArgument(discount >= 0 && discount <= 1, "Invalid discount: " + discount);
         this.discount = discount;
     }
 

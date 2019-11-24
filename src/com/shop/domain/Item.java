@@ -1,7 +1,12 @@
 package com.shop.domain;
 
+import com.shop.util.Precondition;
+
 import java.math.BigDecimal;
 import java.util.Objects;
+
+import static com.shop.util.Precondition.checkArgument;
+import static com.shop.util.Precondition.requireNonNulls;
 
 /**
  * Represent order item.
@@ -16,14 +21,9 @@ public final class Item {
     private final int quantity;
 
     public Item(String name, BigDecimal price, int quantity) {
-        Objects.requireNonNull(name);
-        Objects.requireNonNull(price);
-        if (price.compareTo(BigDecimal.ZERO) < 1) {
-            throw new IllegalArgumentException("Wrong price");
-        }
-        if (quantity < 1) {
-            throw new IllegalArgumentException("Wrong quantity");
-        }
+        requireNonNulls(name, price);
+        checkArgument(price.compareTo(BigDecimal.ZERO) > 0, "Wrong price");
+        checkArgument(quantity > 0, "Wrong quantity");
         this.name = name;
         this.price = price;
         this.quantity = quantity;

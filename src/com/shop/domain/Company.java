@@ -1,6 +1,10 @@
 package com.shop.domain;
 
+import com.shop.util.Precondition;
+
 import java.util.Objects;
+
+import static com.shop.util.Precondition.requireNonNulls;
 
 /**
  * ... comment class...
@@ -14,7 +18,7 @@ public final class Company extends Customer {
 
     public Company(String name, VatNumber vatNumber) {
         super(name);
-        Objects.requireNonNull(vatNumber);
+        requireNonNulls(vatNumber);
         this.vatNumber = vatNumber;
     }
 

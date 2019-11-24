@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static java.util.Objects.requireNonNull;
+
 /**
  * Represents customer.
  *
@@ -18,7 +20,7 @@ public abstract class Customer {
     private boolean active;
 
     public Customer(String name) {
-        Objects.requireNonNull(name);
+        requireNonNull(name);
         this.name = name;
         this.phoneNumbers = new ArrayList<>();
         this.addresses = new ArrayList<>();

@@ -9,7 +9,9 @@ final class ApplicationTest {
                 new PersonTablePrinterTest(),
                 new CustomerTest(),
                 new DiscountPolicyTest(),
-                new OrderTest());
+                new OrderTest(),
+                new AccountTest(),
+                new IOTest());
         runner.runTests();
     }
 }

@@ -5,6 +5,9 @@ import com.shop.domain.Person;
 import java.util.List;
 import java.util.Objects;
 
+import static com.shop.util.Precondition.checkArgument;
+import static java.util.Objects.requireNonNull;
+
 /**
  * This class is responsible for converting person objects to textual table.
  *
@@ -16,14 +19,10 @@ public class PersonTablePrinter {
     private final int[] columnsWidth;
 
     public PersonTablePrinter(int[] columnsWidth) {
-        Objects.requireNonNull(columnsWidth);
-        if (columnsWidth.length < 3) {
-            throw new IllegalArgumentException("Columns array length is less than 3");
-        }
+        requireNonNull(columnsWidth);
+        checkArgument(columnsWidth.length == 3, "Columns array length is less than 3");
         for (int columnWidth : columnsWidth) {
-            if (columnWidth < 8) {
-                throw new IllegalArgumentException("Column width is less than 8");
-            }
+            checkArgument(columnWidth > 7, "Column width is less than 8");
         }
         this.columnsWidth = columnsWidth;
     }

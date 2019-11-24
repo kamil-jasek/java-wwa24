@@ -1,6 +1,11 @@
 package com.shop.domain;
 
+import com.shop.util.Precondition;
+
 import java.util.Objects;
+
+import static com.shop.util.Precondition.checkArgument;
+import static java.util.Objects.requireNonNull;
 
 /**
  * Represents Company Vat Number
@@ -13,10 +18,8 @@ public final class VatNumber {
     private final String value;
 
     public VatNumber(String value) {
-        Objects.requireNonNull(value);
-        if (!value.matches("[A-Z]{2}\\d{10}")) {
-            throw new IllegalArgumentException("Invalid vat number");
-        }
+        requireNonNull(value);
+        checkArgument(value.matches("[A-Z]{2}\\d{10}"), "Invalid vat number");
         this.value = value;
     }
 

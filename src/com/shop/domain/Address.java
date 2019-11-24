@@ -2,6 +2,8 @@ package com.shop.domain;
 
 import java.util.Objects;
 
+import static com.shop.util.Precondition.requireNonNulls;
+
 /**
  * Represents customer address.
  *
@@ -15,10 +17,7 @@ public final class Address {
     private final String country;
 
     public Address(String street, String city, String postCode, String country) {
-        Objects.requireNonNull(street);
-        Objects.requireNonNull(city);
-        Objects.requireNonNull(postCode);
-        Objects.requireNonNull(country);
+        requireNonNulls(street, city, postCode, country);
         this.street = street;
         this.city = city;
         this.postCode = postCode;

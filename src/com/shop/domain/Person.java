@@ -1,6 +1,6 @@
 package com.shop.domain;
 
-import java.util.Objects;
+import static com.shop.util.Precondition.requireNonNulls;
 
 public final class Person extends Customer {
 
@@ -19,8 +19,7 @@ public final class Person extends Customer {
     }
 
     private void initFullName(String firstName, String lastName) {
-        Objects.requireNonNull(firstName);
-        Objects.requireNonNull(lastName);
+        requireNonNulls(firstName, lastName);
         this.firstName = firstName;
         this.lastName = lastName;
     }
