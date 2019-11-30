@@ -4,6 +4,7 @@ import com.shop.command.CreateAccountMenuCommand;
 import com.shop.command.MenuCommand;
 import com.shop.domain.Account;
 import com.shop.domain.Company;
+import com.shop.domain.Person;
 import com.shop.util.ListSelector;
 import com.shop.util.io.*;
 
@@ -38,7 +39,20 @@ final class CreateAccountMenuCommandTest {
     }
 
     void testCreatePerson() {
+        String userInput =
+                "2\n" +
+                "Jan\n" +
+                "Kowalski\n";
 
+        IO io = buildIO(userInput);
+        ListSelector listSelector = new ListSelector(io);
+        MenuCommand<List<Account>> command =
+                new CreateAccountMenuCommand(io, listSelector);
+
+        List<Account> accounts = new ArrayList<>();
+        command.execute(accounts);
+        assert accounts.size() == 1 : "Invalid accounts size";
+        assert accounts.get(0).getCustomer() instanceof Person : "Invalid customer";
     }
 
     private IO buildIO(String userInput) {

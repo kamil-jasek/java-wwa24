@@ -6,7 +6,7 @@ final class ApplicationTest {
         System.out.println("Running application tests...");
         TestRunner runner = new TestRunner(
                 new PersonTest(),
-                new PersonTablePrinterTest(),
+                new AccountTablePrinterTest(),
                 new CustomerTest(),
                 new DiscountPolicyTest(),
                 new OrderTest(),
