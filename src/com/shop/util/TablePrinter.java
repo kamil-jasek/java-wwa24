@@ -36,7 +36,8 @@ public abstract class TablePrinter<T> {
     protected abstract void buildRows(List<T> list, StringBuilder builder);
 
     protected String field(String text, int width) {
-        String trimmed = text.trim();
+        // ternary operator
+        String trimmed = text == null ? "-" : text.trim();
         if (trimmed.length() > width) {
             return trimmed.substring(0, width - 3) + "...";
         }

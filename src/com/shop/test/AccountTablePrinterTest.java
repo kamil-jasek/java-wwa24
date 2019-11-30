@@ -32,10 +32,10 @@ final class AccountTablePrinterTest {
         accounts.add(new Account(new Company("ABC", new VatNumber("PL1234567890"))));
         String table = printer.print(accounts);
         String expectedString =
-                "Full Name | Phone Numbers  | Active |\n" +
-                "-------------------------------------\n" +
-                "Kamil J...|                |  true  |\n" +
-                "Jan Nowak |                |  true  |\n";
+                "   Name   |    Tax ID    | Phone Numbers  | Active |\n" +
+                "----------------------------------------------------\n" +
+                "Kamil J...|      -       |                |  true  |\n" +
+                "   ABC    | PL1234567890 |                |  true  |\n";
         assert expectedString.equals(table) : "Table format is wrong";
     }
 }
