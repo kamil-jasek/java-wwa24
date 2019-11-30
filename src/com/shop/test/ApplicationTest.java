@@ -11,7 +11,8 @@ final class ApplicationTest {
                 new DiscountPolicyTest(),
                 new OrderTest(),
                 new AccountTest(),
-                new IOTest());
+                new IOTest(),
+                new CreateAccountMenuCommandTest());
         runner.runTests();
     }
 }

@@ -5,6 +5,7 @@ import com.shop.domain.DiscountPolicy;
 import com.shop.domain.FixedDiscountPolicy;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Discount policies tests
@@ -26,8 +27,8 @@ final class DiscountPolicyTest {
     }
 
     void testCouponDiscountPolicy() {
-        DiscountPolicy policy = new CouponDiscountPolicy(
-                Arrays.asList("ABC", "CDE"), 0.2F);
+        List<String> codes = Arrays.asList("ABC", "CDE");
+        DiscountPolicy policy = new CouponDiscountPolicy(codes , 0.2F);
         assert policy.getDiscount("ABC") == 0.2F : "Invalid discount";
         assert policy.getDiscount("ABC") == 0 : "Invalid discount";
         assert policy.getDiscount("CDE") == 0.2F : "Invalid discount";
