@@ -25,7 +25,9 @@ public final class ScannerInputControl implements InputControl {
 
     @Override
     public int integer() {
-        return scanner.nextInt();
+        int res = scanner.nextInt();
+        scanner.nextLine();
+        return res;
     }
 
     @Override

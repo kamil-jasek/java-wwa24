@@ -28,7 +28,7 @@ public final class ListSelector {
         printer.print(objects);
         while (true) {
             int selected = io.in().integer();
-            if (selected > 0 && selected < objects.size()) {
+            if (selected > 0 && selected <= objects.size()) {
                 return selected;
             }
             io.out().text("Selected value is wrong. Please select again:");
