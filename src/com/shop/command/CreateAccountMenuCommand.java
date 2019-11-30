@@ -65,4 +65,9 @@ public final class CreateAccountMenuCommand
         String lastName = io.in().text();
         return new Person(firstName, lastName);
     }
+
+    @Override
+    public String toString() {
+        return "Create account";
+    }
 }

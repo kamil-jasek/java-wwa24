@@ -9,4 +9,8 @@ package com.shop.command;
 public interface MenuCommand<T> {
 
     void execute(T context);
+
+    default boolean isExit() {
+        return false;
+    }
 }
