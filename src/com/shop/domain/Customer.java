@@ -1,5 +1,6 @@
 package com.shop.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,7 +13,9 @@ import static java.util.Objects.requireNonNull;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-17
  */
-public abstract class Customer {
+public abstract class Customer implements Serializable {
+
+    private static final long serialVersionUID = 100L;
 
     private final String name;
     private final List<String> phoneNumbers;
@@ -38,12 +41,23 @@ public abstract class Customer {
         return name;
     }
 
+    public void test() {
+        System.out.println("test");
+    }
+
     public List<String> getPhoneNumbers() {
         return new ArrayList<>(phoneNumbers);
     }
 
     public List<Address> getAddresses() {
         return new ArrayList<>(addresses);
+    }
+
+    public Address removeAddress(int idx) {
+        if (idx >= 0 && idx < addresses.size()) {
+            return addresses.remove(idx);
+        }
+        return null;
     }
 
     public boolean isActive() {

@@ -2,6 +2,7 @@ package com.shop.domain;
 
 import com.shop.util.Precondition;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -14,7 +15,7 @@ import static com.shop.util.Precondition.requireNonNulls;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-24
  */
-public final class Item {
+public final class Item implements Serializable {
 
     private final String name;
     private final BigDecimal price;

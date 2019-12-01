@@ -2,6 +2,7 @@ package com.shop.domain;
 
 import com.shop.util.Precondition;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import static com.shop.util.Precondition.checkArgument;
@@ -13,7 +14,7 @@ import static java.util.Objects.requireNonNull;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-23
  */
-public final class VatNumber {
+public final class VatNumber implements Serializable {
 
     private final String value;
 

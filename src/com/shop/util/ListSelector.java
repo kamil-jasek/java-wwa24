@@ -4,6 +4,7 @@ import com.shop.util.io.IO;
 
 import java.util.List;
 
+import static com.shop.util.Precondition.checkArgument;
 import static com.shop.util.Precondition.requireNonNulls;
 
 /**
@@ -24,6 +25,7 @@ public final class ListSelector {
     }
 
     public int select(List<?> objects) {
+        checkArgument(!objects.isEmpty(), "empty list");
         io.out().text("Please select one of:");
         printer.print(objects);
         while (true) {

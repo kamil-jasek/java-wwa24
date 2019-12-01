@@ -2,6 +2,7 @@ package com.shop.domain;
 
 import com.shop.util.Precondition;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import static com.shop.util.Precondition.requireNonNulls;

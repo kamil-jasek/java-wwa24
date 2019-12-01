@@ -1,5 +1,6 @@
 package com.shop.domain;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.Objects;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-24
  */
-public final class Order {
+public final class Order implements Serializable {
 
     private final DiscountPolicy discountPolicy;
     private final List<Item> items;

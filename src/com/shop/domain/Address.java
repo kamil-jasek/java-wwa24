@@ -1,5 +1,6 @@
 package com.shop.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import static com.shop.util.Precondition.requireNonNulls;
@@ -10,7 +11,7 @@ import static com.shop.util.Precondition.requireNonNulls;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-23
  */
-public final class Address {
+public final class Address implements Serializable {
     private final String street;
     private final String city;
     private final String postCode;

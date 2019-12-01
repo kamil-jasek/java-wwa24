@@ -1,5 +1,6 @@
 package com.shop.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,7 +13,7 @@ import static com.shop.util.Precondition.requireNonNulls;
  * @author kamil.jasek@gmail.com
  * @since 2019-11-24
  */
-public final class Account {
+public final class Account implements Serializable {
 
     private final Customer customer;
     private final List<Order> orders;
@@ -48,5 +49,10 @@ public final class Account {
     @Override
     public int hashCode() {
         return Objects.hash(customer);
+    }
+
+    @Override
+    public String toString() {
+        return customer.getName() + ", taxId: " + customer.getTaxId();
     }
 }
